@@ -10,8 +10,8 @@ def index(request):
         "all_books" : all_book
     })
 
-def book_details(request,id):
-    book = get_object_or_404(Book, pk=id) #pk= primary key
+def book_details(request,slug):
+    book = get_object_or_404(Book, slug=slug)
     return render(request, "book_outlet/book-details.html",{
         "title": book.title,
         "author":book.author,
